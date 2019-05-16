@@ -172,7 +172,7 @@ class ReacherEnv(RTRLBaseEnv, gym.core.Env):
         self._end_effector_high = np.array(setup['end_effector_high'])
         
         self._angles_low = np.array(setup['angles_low'])
-        self._angles_low = np.pi/180 * self._angles_low
+        self._angles_low = np.pi/180 * self._angles_low # Convert from degrees to radians
         self._angles_low = self._angles_low[self._joint_indices]
 
         self._angles_high = np.array(setup['angles_high'])
@@ -185,7 +185,9 @@ class ReacherEnv(RTRLBaseEnv, gym.core.Env):
         self._accel_high = np.ones(self._dof) * accel_max
 
         self._box_bound_buffer = setup['box_bound_buffer']
-        self._angle_bound_buffer = setup['angle_bound_buffer']
+        
+        self._angle_bound_buffer = np.pi/180 * setup['angle_bound_buffer'] # Convert from degrees to radians
+
         self._q_ref = np.array(setup['q_ref'])
         self._ik_params = setup['ik_params']
 
