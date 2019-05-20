@@ -86,7 +86,7 @@ class URCommunicator(Communicator):
             port=ur_utils.REALTIME_COMM_CLIENT_INTERFACE_PORT,
             disable_nagle_algorithm=self._disable_nagle_algorithm
         )
-        logging.debug(self._sock)
+        logging.debug('Socket Info: {}'.format(self._sock))
         self._sock.settimeout(0.2)
 
         self._dashboard_sock = URCommunicator.make_connection(
