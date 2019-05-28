@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip3 install --upgrade pip
 
 RUN pip3 install ruamel.yaml
+RUN pip3 install paramiko
 
 RUN git clone https://github.com/dti-research/SenseAct && cd SenseAct && pip3 install -e .
 
