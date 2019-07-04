@@ -25,6 +25,7 @@ RUN pip3 install --upgrade pip
 
 RUN pip3 install ruamel.yaml
 RUN pip3 install paramiko
+RUN pip3 install pandas bootstrapped scipy fitter
 
 RUN git clone https://github.com/dti-research/SenseAct && cd SenseAct && pip3 install -e .
 
